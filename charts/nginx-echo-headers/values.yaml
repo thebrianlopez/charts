@@ -4,7 +4,7 @@
 
 replicaCount: 1
 image:
-  repository: thebrianlopez/echo-headers
+  repository: thebrianlopez/nginx-echo-header
   tag: 0.0.1
 
 serviceAccount:
@@ -74,6 +74,4 @@ tolerations: []
 
 affinity: {}
 
-containerPorts:
-  http: 8080
-  https: 8443
+containerPort: 8080
