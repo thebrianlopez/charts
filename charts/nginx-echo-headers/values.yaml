@@ -4,15 +4,15 @@
 
 replicaCount: 1
 image:
-  registry: docker.io
-  repository: brndnmtthws/nginx-echo-headers
-  tag: latest
-  pullPolicy: IfNotPresent
-  tag: ""
+  #registry: docker.io
+  repository: thebrianlopez/echo-headers
+  tag: 0.0.1
+    #imagePullPolicy: Never
+    #pullPolicy: 
 
-imagePullSecrets: []
-nameOverride: ""
-fullnameOverride: ""
+    #imagePullSecrets: []
+    #nameOverride: ""
+    #fullnameOverride: ""
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -80,3 +80,7 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+containerPorts:
+  http: 8080
+  https: 8443
