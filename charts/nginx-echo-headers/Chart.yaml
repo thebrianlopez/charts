@@ -3,10 +3,8 @@ name: nginx-echo-headers
 description: Echos back http headers from the client
 icon: https://www.brianlopez.us/images/avatar-s.jpg
 type: application
-version: 0.0.1
-appVersion: "1.16.0"
-validate-maintainers: false
-
+version: 0.0.2
+appVersion: 1.16.0
 maintainers:
   - name: thebrianlopez
     email: 328625+thebrianlopez@users.noreply.github.com

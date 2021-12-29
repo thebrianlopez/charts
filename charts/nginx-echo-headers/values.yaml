@@ -4,15 +4,8 @@
 
 replicaCount: 1
 image:
-  #registry: docker.io
   repository: thebrianlopez/echo-headers
   tag: 0.0.1
-    #imagePullPolicy: Never
-    #pullPolicy: 
-
-    #imagePullSecrets: []
-    #nameOverride: ""
-    #fullnameOverride: ""
 
 serviceAccount:
   # Specifies whether a service account should be created
