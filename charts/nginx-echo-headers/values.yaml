@@ -4,8 +4,8 @@
 
 replicaCount: 1
 image:
-  repository: thebrianlopez/nginx-echo-header
-  tag: 0.0.1
+  repository: brndnmtthws/nginx-echo-headersx 
+  tag: latest
 
 serviceAccount:
   # Specifies whether a service account should be created
