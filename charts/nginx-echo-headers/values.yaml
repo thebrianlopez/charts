@@ -4,7 +4,7 @@
 
 replicaCount: 1
 image:
-  repository: brndnmtthws/nginx-echo-headersx 
+  repository: brndnmtthws/nginx-echo-headers 
   tag: latest
 
 serviceAccount:
