@@ -3,9 +3,8 @@ name: cilium
 description: A Helm chart for cilium cni
 type: application
 version: 1.0.1
-appVersion: 1.10.3
+appVersion: 1.11.1
 dependencies:
   - name: cilium
     version: 1.11.1
     repository: https://helm.cilium.io/
-

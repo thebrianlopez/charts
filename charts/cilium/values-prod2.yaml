@@ -1,7 +1,12 @@
+#First uninstall the aws-node daemon!!#First uninstall the aws-node daemon!!
+#First uninstall the aws-node daemon!!#First uninstall the aws-node daemon!!
+#First uninstall the aws-node daemon!!#First uninstall the aws-node daemon!!
+#kubectl -n kube-system delete daemonset aws-node
+
 cilium:
   cluster:
     # -- Name of the cluster. Only required for Cluster Mesh.
-    # name: dev-eks
+    name: prod-eks
     # -- (int) Unique ID of the cluster. Must be unique across all connected
     # clusters and in the range of 1 to 255. Only required for Cluster Mesh.
     id: 1
