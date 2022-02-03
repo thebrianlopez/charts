@@ -12,7 +12,7 @@ spec:
   project: default
   source:
     path: charts/astronomer
-    repoURL: https://github.com/astronomer/astronomer
+    repoURL: https://github.com/thebrianlopez/charts
     targetRevision: master
     helm:
       version: v3
