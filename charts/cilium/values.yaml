@@ -1,0 +1,29 @@
+cilium:
+  cluster:
+    # -- Name of the cluster. Only required for Cluster Mesh.
+    # name: dev-eks
+    # -- (int) Unique ID of the cluster. Must be unique across all connected
+    # clusters and in the range of 1 to 255. Only required for Cluster Mesh.
+    id: 1
+
+  eni:
+    enabled: true
+    iamRole: ""
+
+
+  ipam:
+    mode: eni
+
+  tunnel: disabled
+
+  egressMasqueradeInterfaces: eth0
+
+  nodeinit:
+    enabled: true
+
+  hubble:
+    enabled: true
+    relay:
+      enabled: true
+    ui:
+      enabled: true
