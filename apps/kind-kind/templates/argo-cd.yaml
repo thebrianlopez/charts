@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd
+  namespace: {{ .Values.metadata.namespace }}
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: {{ .Values.spec.destination.server }}
+    namespace: argocd-local
+  project: default
+  source:
+    path: charts/argo-cd
+    repoURL: https://github.com/argoproj/argo-helm
+    targetRevision: HEAD
+    helm:
+      version: v3
+      valueFiles:
+        - values.yaml
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+      - CreateNamespace=true

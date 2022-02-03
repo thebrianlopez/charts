@@ -1,0 +1,8 @@
+# Capturing a few key values here; most config is done in apps/templates
+metadata:
+  namespace: argocd-local
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://github.com/thebrianlopez/charts

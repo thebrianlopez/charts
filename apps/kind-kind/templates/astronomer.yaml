@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: astronomer
+  namespace: {{ .Values.metadata.namespace }}
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: {{ .Values.spec.destination.server }}
+    namespace: astronomer-local
+  project: default
+  source:
+    path: charts/astronomer
+    repoURL: https://github.com/astronomer/astronomer
+    targetRevision: master
+    helm:
+      version: v3
+      valueFiles:
+        - values.yaml
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+      - CreateNamespace=true

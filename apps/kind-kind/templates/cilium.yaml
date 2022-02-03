@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cilium
+  namespace: {{ .Values.metadata.namespace }}
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: {{ .Values.spec.destination.server }}
+    namespace: kube-system
+  project: default
+  source:
+    path: charts/cilium
+    repoURL: https://github.com/thebrianlopez/charts
+    targetRevision: nginx-echo-header
+    helm:
+      version: v3
+      valueFiles:
+        - values.yaml
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: false
