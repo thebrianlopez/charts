@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-#cilium hubble enable
+cilium hubble enable
 
 helm repo add argo-cd https://argoproj.github.io/argo-helm
 

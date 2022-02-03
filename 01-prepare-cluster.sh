@@ -2,6 +2,6 @@
 
 kind create cluster 
 
-#cilium install
+cilium install
 
 
