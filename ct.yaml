@@ -1,0 +1,12 @@
+# See https://github.com/helm/chart-testing#configuration
+remote: origin
+target-branch: main
+chart-dirs:
+  - charts
+chart-repos:
+  - bitnami=https://charts.bitnami.com/bitnami
+  - argo-cd=https://argoproj.github.io/argo-helm
+  - cilium=https://helm.cilium.io/
+  - astronomer=https://helm.astronomer.io
+  - datadog=https://helm.datadoghq.com
+helm-extra-args: --timeout 600s
