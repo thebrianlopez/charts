@@ -12,8 +12,8 @@ spec:
   project: default
   source:
     path: charts/astronomer
-    repoURL: https://github.com/thebrianlopez/charts
-    targetRevision: master
+    repoURL: {{ .Values.spec.source.repoURL }}
+    targetRevision: {{ .Values.spec.source.targetRevision }}
     helm:
       version: v3
       valueFiles:
