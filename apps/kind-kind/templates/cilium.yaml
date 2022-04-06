@@ -17,7 +17,7 @@ spec:
     helm:
       version: v3
       valueFiles:
-        - values-default.yaml
+        - values-kind-kind.yaml
   syncPolicy:
     automated:
       selfHeal: true
