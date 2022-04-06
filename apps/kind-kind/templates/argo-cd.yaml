@@ -8,8 +8,8 @@ metadata:
 spec:
   destination:
     server: {{ .Values.spec.destination.server }}
-    namespace: argocd-local
-  project: {{ .Values.spec.project }}
+    namespace: argocd
+  project: default
   source:
     path: charts/argo-cd
     repoURL: {{ .Values.spec.source.repoURL }}
