@@ -16,3 +16,84 @@ argo-cd:
         - type: helm
           name: argo-cd
           url: https://argoproj.github.io/argo-helm
+  configs:
+      ## External Cluster Credentials
+      ## reference:
+      ## - https://argoproj.github.io/argo-cd/operator-manual/declarative-setup/#clusters
+      ## - https://argoproj.github.io/argo-cd/operator-manual/security/#external-cluster-credentials
+      clusterCredentials:
+        []
+        # - name: mycluster
+        #   server: https://mycluster.com
+        #   labels: {}
+        #   annotations: {}
+        #   config:
+        #     bearerToken: "<authentication token>"
+        #     tlsClientConfig:
+        #       insecure: false
+        #       caData: "<base64 encoded certificate>"
+        # - name: mycluster2
+        #   server: https://mycluster2.com
+        #   labels: {}
+        #   annotations: {}
+        #   namespaces: namespace1,namespace2
+        #   config:
+        #     bearerToken: "<authentication token>"
+        #     tlsClientConfig:
+        #       insecure: false
+        #       caData: "<base64 encoded certificate>"
+
+      knownHostsAnnotations: {}
+      knownHosts:
+        data:
+          ssh_known_hosts: |
+            github.com ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDh7+O+q1XL2EtP1NnaymFPz841D2aRAy3gnZybcw/Zsk4ADBtrEUOv/8mQa5uBZVRJJsllVR9L/u/bukpUJUhNVciVAU1Fknb3cbEoeVW/H1XOyPt7BlyczmM6RFqHf1c0ShOm9phYSbfWIQ3nye/ye8xq3GdNkrEqTW4+mL8rHkAe8r3UUbZdhnKNC/3aHkzskKOkySxj3rkYtC9U+4luv848waXDxvbvdZcBuXpOZCfYQoLvHZfpFqyaqqs9ps1xujim23ZLmzO9D5tO2/mvcgPJ4snx6BrvhQeVyqslCWK5XoKo0+YfdO7Ctw3LK2/BZk29NnFieqHxzV+YIxADK7XewkfMk2tTtNEMC5j3mfRIaUBjHNAgu96FyI4qEv19Fl3Vm+6mZNa+DjBUisM9m2Kl8yxOD00309o4e+25MiyBboo3rYx6er9UczzEeQVflG1D49UEeg/a65M5uV8VmOm3dB9b5DUkwrHcYo0m9I5+TIQ0W3/TJpnbuzY3Wvk= argo
+      tlsCertsAnnotations: {}
+      tlsCerts: {}
+      # Creates a secret with optional repository credentials
+      repositoryCredentials: {}
+      secret:
+        createSecret: true
+        ## Annotations to be added to argocd-secret
+        ##
+        annotations: {}
+
+        # Webhook Configs
+        githubSecret: ""
+        gitlabSecret: ""
+        bitbucketServerSecret: ""
+        bitbucketUUID: ""
+        gogsSecret: ""
+
+        # Custom secrets. Useful for injecting SSO secrets into environment variables.
+        # Ref: https://argoproj.github.io/argo-cd/operator-manual/sso/
+        # Note that all values must be non-empty.
+        extra:
+          {}
+          # LDAP_PASSWORD: "mypassword"
+
+        # Argo TLS Data.
+        argocdServerTlsConfig:
+          {}
+          # key:
+          # crt: |
+          #   -----BEGIN CERTIFICATE-----
+          #   <cert data>
+          #   -----END CERTIFICATE-----
+          #   -----BEGIN CERTIFICATE-----
+          #   <ca cert data>
+          #   -----END CERTIFICATE-----
+
+        # Argo expects the password in the secret to be bcrypt hashed. You can create this hash with
+        # `htpasswd -nbBC 10 "" $ARGO_PWD | tr -d ':\n' | sed 's/$2y/$2a/'`
+        # argocdServerAdminPassword: ""
+        # Password modification time defaults to current time if not set
+        # argocdServerAdminPasswordMtime: "2006-01-02T15:04:05Z"
+
+      ## Custom CSS Styles
+      ## Reference: https://argo-cd.readthedocs.io/en/stable/operator-manual/custom-styles/
+      # styles: |
+      #  .nav-bar {
+      #    background: linear-gradient(to bottom, #999, #777, #333, #222, #111);
+      #  }
+
