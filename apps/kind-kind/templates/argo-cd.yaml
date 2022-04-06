@@ -9,7 +9,7 @@ spec:
   destination:
     server: {{ .Values.spec.destination.server }}
     namespace: argocd
-  project: default
+  project: {{ .Values.spec.project }}
   source:
     path: charts/argo-cd
     repoURL: {{ .Values.spec.source.repoURL }}
