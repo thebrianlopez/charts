@@ -11,6 +11,6 @@
 #  --create-namespace \
 #  --dependency-update \
 #  --namespace argocd-local 
-kubectl --context kind-kind --namespace default create namespace argocd-local
-kubectl --context kind-kind --namespace argocd-local apply -f https://raw.githubusercontent.com/argoproj/argo-cd/v2.3.3/manifests/install.yaml
+kubectl --context kind-kind --namespace default create namespace argocd
+kubectl --context kind-kind --namespace argocd apply -f https://raw.githubusercontent.com/argoproj/argo-cd/v2.3.3/manifests/install.yaml
 
