@@ -6,4 +6,7 @@ spec:
     server: https://kubernetes.default.svc
   project: data
   source:
+    helm:
+      valueFiles:
+        - values-kind-kind.yaml
     repoURL: https://github.com/thebrianlopez/charts

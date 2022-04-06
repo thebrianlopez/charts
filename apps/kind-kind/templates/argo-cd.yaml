@@ -9,15 +9,15 @@ spec:
   destination:
     server: {{ .Values.spec.destination.server }}
     namespace: argocd-local
-  project: default
+  project: {{ .Values.spec.project }}
   source:
     path: charts/argo-cd
-    repoURL: https://github.com/argoproj/argo-helm
-    targetRevision: HEAD
+    repoURL: {{ .Values.spec.source.repoURL }}
+    targetRevision: dev
     helm:
       version: v3
       valueFiles:
-        - values.yaml
+        - {{ .Values.spec.source.helm.valueFiles }}
   syncPolicy:
     automated:
       selfHeal: true
