@@ -12,12 +12,12 @@ spec:
   project: default
   source:
     path: charts/cilium
-    repoURL: {{ .Values.spec.source.repoURL }}
-    targetRevision: {{ .Values.spec.source.targetRevision }}
+    repoURL: https://github.com/thebrianlopez/charts
+    targetRevision: nginx-echo-header
     helm:
       version: v3
       valueFiles:
-        - values.yaml
+        - values-default.yaml
   syncPolicy:
     automated:
       selfHeal: true

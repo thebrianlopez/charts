@@ -4,6 +4,6 @@ metadata:
 spec:
   destination:
     server: https://kubernetes.default.svc
+  project: data
   source:
     repoURL: https://github.com/thebrianlopez/charts
-    targetRevision: dev

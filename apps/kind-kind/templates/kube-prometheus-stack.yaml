@@ -1,19 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: astronomer
+  name: kube-prometheus-stack
   namespace: {{ .Values.metadata.namespace }}
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     server: {{ .Values.spec.destination.server }}
-    namespace: astronomer-local
+    namespace: kube-prometheus-stack
   project: default
   source:
-    path: charts/astronomer
-    repoURL: {{ .Values.spec.source.repoURL }}
-    targetRevision: {{ .Values.spec.source.targetRevision }}
+    path: charts/kube-prometheus-stack
+    repoURL: https://github.com/prometheus-community/helm-charts.git
+    targetRevision: master
     helm:
       version: v3
       valueFiles:
