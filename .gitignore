@@ -2,3 +2,4 @@
 /charts/*/charts
 .idea
 charts/charts/.DS_Store
+secrets/*
