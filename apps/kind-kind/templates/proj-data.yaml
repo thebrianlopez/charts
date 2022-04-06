@@ -16,7 +16,7 @@ spec:
 
   # This list restricts which namespaces and clusters the project can deploy to
   destinations:
-  - namespace: data
+  - namespace: '*'
     server: {{ .Values.spec.destination.server }}
 
   # Cluster-scoped resources are managed with an allow list
