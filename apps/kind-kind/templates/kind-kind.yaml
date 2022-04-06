@@ -10,7 +10,7 @@ metadata:
 spec:
   destination:
     server: {{ .Values.spec.destination.server }}
-    namespace: argocd-local
+    namespace: argocd
   project: {{ .Values.spec.project }}
   source:
     path: apps/kind-kind
