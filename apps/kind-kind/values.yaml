@@ -7,3 +7,4 @@ spec:
   project: data
   source:
     repoURL: https://github.com/thebrianlopez/charts
+    targetRevision: dev
